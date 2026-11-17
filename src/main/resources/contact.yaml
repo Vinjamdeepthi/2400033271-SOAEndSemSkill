@@ -1,0 +1,35 @@
+openapi: 3.0.0
+
+info:
+  title: Addition API
+  version: 1.0.0
+  description: API for adding two numbers
+
+paths:
+  /ms1/add:
+    get:
+      summary: Addition of two numbers
+
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 5
+
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 10
+
+      responses:
+        '200':
+          description: Successful addition
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: "ms1.1 addition=15"
